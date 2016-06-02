@@ -1,0 +1,19 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=Help.chm
+Default Window=Main
+Default topic=help.html
+Display compile progress=Yes
+Language=0x1009 English (Canada)
+Title=Virtual Salesman 3 Help
+
+[WINDOWS]
+Main="Vendeur Virtuel Help",,,"help.html","help.html",,,,,0x2000,,0x3002,[0,0,700,500],0x30000,,,,,,0
+
+
+[FILES]
+aide.html
+help.html
+
+[INFOTYPES]
+

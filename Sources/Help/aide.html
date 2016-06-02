@@ -1,0 +1,408 @@
+<html>
+ <head>
+    <title>Vendeur Virtuel 3</title>
+    <meta name="author" content="Marc-Andre Lamothe">
+    <meta name="generator" content="TED Notepad">
+    <style type="text/css"><!--
+      body, table {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;}
+      a {color: #3253BE;}
+      a:visisted {color: #3253BE;}
+      a:hover {background-color: #3253BE; color: #FFFFFF;}
+      h1 {font-size: 22px;} h3 {font-size: 16px;} h3 {font-size: 14px;} h4 {font-size: 12px;} h5 {font-size: 10px;}
+      ul {list-style-type: disc;} ul ul {list-style-type: circle;} ul ul ul {list-style-type: square;}
+      .black {color: #000000; font-weight: bold;)
+    --></style>
+ </head>
+ <body>
+  <h1>Vendeur Virtuel 3</h1>
+  <p>Pour plus d'information visitez mon site web <a href="http://www.marcandre.info" target="_blank">http://www.marcandre.info</a><br>
+  ou &eacute;crivez-moi &agrave; <a href="mailto:marc@marcandre.info">marc@marcandre.info</a></p>
+  <p>Copyright &copy;1998-2005 Marc-andr&eacute; Lamothe.<hr>
+  <a href="help.html">Click here for the english version</a></p><br>
+
+  <ol>
+    <li><a class="black" href="#Intro">Introduction</a><ul>
+      <li><a href="#Desc">Description</a></li>
+      <li><a href="#Hist">Historique</a></li>
+    </ul></li>
+    <li><a class="black" href="#VV3">Vendeur Virtuel 3</a><ul>
+      <li><a href="#Int">Interfaces</a><ul>
+        <li><a href="#IMain">Principal</a></li>
+        <li><a href="#IInv">Inventaire</a></li>
+        <li><a href="#ITra">Transactions</a></li>
+      	<li><a href="#IRep">Rapports</a></li>
+      </ul></li>
+      <li><a href="#Web">Module web</a><ul>
+        <li><a href="#WCGI">C.G.I.</a></li>
+        <li><a href="#WDes">Description</a></li>
+        <li><a href="#WMod">Mod&egrave;les</a></li>
+        <li><a href="#WTag">Balises</a></li>
+      <li><a href="#WExe">Ex&eacute;cution</a></li>
+      </ul></li>
+    </ul></li>
+    <li><a class="black" href="#Data">Structures de donn&eacute;es</a><ul>
+      <li><a href="#Encr">Encryption</a></li>
+    </ul></li>
+    <li><a class="black" href="#Conc">Conclusion</a></li>
+  </ol><br><br>
+
+  <a name="Intro"></a>
+  <dl><dt><h2>1. Introduction</h2></dt></dl>
+
+  <a name="Desc"></a>
+  <dl><dt><h3>1.1 Description</h3></dt>
+  <dd>
+    <p>Le Vendeur Virtuel est une nouvelle g&eacute;n&eacute;ration de logiciel de facturation
+    destin&eacute; aux petites et moyennes entreprises ainsi qu'aux particuliers. Il a &eacute;t&eacute;
+    con&ccedil;u pour vous permettre de faire de la facturation ainsi que de la gestion
+    d'inventaire, il ne vous permet donc pas de faire de la comptabilit&eacute;. Cette sp&eacute;cialisation
+    le rend donc tr&egrave;s rapide, versatile et simple &agrave; utiliser.</p>
+
+    <p>Il permet une gestion avanc&eacute;e des inventaires, employ&eacute;s, clients et fournisseurs.
+    De plus il est possible de cr&eacute;er et d'utiliser plusieures compagnies avec le m&ecirc;me
+    logiciel. Il offre une tr&egrave;s bonne alternative &agrave; la facturation faite &agrave;
+    la main ou avec des tableurs tel que Excel puisqu'il permet l'automatisation des proc&eacute;dures
+    de facturation et de gestion d'inventaire. Vous pouvez aussi utilis&eacute; vos inventaires
+    en ligne gr&acirc;ce &agrave; sont module web, ce qui permet &agrave; clients d'avoir directement
+    acc&egrave;s &agrave; tout vos produits et &agrave; leur prix les plus r&eacute;cents.</p>
+  </dd></dl><br>
+
+  <a name="Hist"></a>
+  <dl><dt><h3>1.2 Historique</h3></dt>
+  <dd>
+    <p>Le Vendeur Virtuel est le fruit de 6 ans de travail et de recherche.
+    Ce programme &agrave; d&eacute;buter comme alternative &agrave; une page web qui permettais la
+    cr&eacute;ation d'une soumission en ligne pour l'achat d'un ordinateur. Programm&eacute;e
+    en C++ la premi&egrave;re version n'offrais g&egrave;re plus que la page web, avec des menus
+    d&eacute;roulants pr&eacute;d&eacute;finis et aucune flexibilit&eacute;. Puis vint
+    la version 2.0 avec des listes dynamiques et quelques nouvelles fonctionalit&eacute;s.
+    Finallement en Janvier 2000 commença le d&eacute;vellopement de la version 3.0, qui devait être
+    la premi&egrave;re version totalement polyvalente et flexible du logiciel.</p>
+
+    <p>Pour la version 3.0 tout le code &agrave; &eacute;t&eacute; r&eacute;-&eacute;cris
+    au complet, mais lorsque tout &eacute;tais presque fini des probl&egrave;mes sont
+    survenus avec l'allocation de m&eacute;moire en C++ et donc j'ai
+    d&eacute;cider de changer pour le language pascal avec Borland Delphi &agrave; la place du C++ avec
+    Borland C++ Builder 5.0. Tout d&ucirc; &ecirc;tre r&eacute;-&eacute;cris de nouveau,
+    mais sans probl&egrave;mes cette fois-ci et la version 3.0 &agrave; vue le jour le
+    3 Juin 2003.</p>
+
+    <p>Jusque l&agrave; le Vendeur Virtuel &eacute;tais toujours composer de deux modules,
+    un de gestion et un de vente, mais avec la version 3.0 est survenus des probl&egrave;mes
+    de consistance donn&eacute;es car le module de vente &agrave; d&ucirc; commencer &agrave;
+    &eacute;crire dans les fichiers lui aussi pour supporter l'ajout de nouveau clients
+    et la soustraction des quantit&eacute;s vendues, ce qui pouvait causer des pertes de
+    donn&eacute;es si, par exemple, le module de gestion enregistre les donn&eacute;es
+    qu'il avait lus avant que le module de vente ne les modifient, les modifications du
+    module de vente serais &eacute;ffac&eacute;es. Pour cette raison, le 3 Mai 2004 il
+    &agrave; &eacute;t&eacute; d&eacute;cider que la version 3.1.1 ne serais pas
+    compos&eacute;e de deux modules mais seulement un.</p>    
+  </dd></dl>
+  <p><a href="aide.html">Retourner en haut de la page</a></p><br>
+
+  <a name="VV3"></a>
+  <dl><dt><h2>2. Vendeur Virtuel</h2></dt>
+  <dd>
+    <p>Le Vendeur Virtuel int&egrave;gre compl&egrave;tement la gestion de toutes les
+    informations de la ou les  compagnie(s) dont la mise &agrave; jour des listes
+    d'employ&eacute;s, de clients et de fournisseurs ainsi que la cr&eacute;ation
+    d'inventaires et de transactions.</p>
+  </dd></dl><br>
+
+  <a name="Int"></a>
+  <dl><dt><h3>2.1 Interfaces</h3></dt></dl>
+
+  <a name="IMain"></a>
+  <dl><dt><h4>2.1.1 Principal</h4></dt>
+  <dd>
+    <p>Voici la fen&ecirc;tre principale du Vendeur Virtuel :</p>
+    <img src="images/f01.jpg">
+
+    <p>Son interface est tr&egrave;s simple et facile d'utilisation, il suffit de
+    s&eacute;lectionner un des 5 onglets (Inventaires, Employ&eacute;s,
+    Clients, Fournisseurs ou Transactions) pour pouvoir acc&egrave;der &agrave
+    toutes les donn&eacute;es de votre compagnie dans cette section.</p>
+
+    <p>Lorsque vous avez s&eacute;lectionner un onglet, les boutons Imprimer, Annuler, Refaire,
+    Ajouter, Modifier, Suprimmer et Rechercher n'affecterons que la liste courante, les autres fonctions
+    (tel que Ouvrir et Sauvegarder) sont globales. Vous pouvez aussi modifier le contenu de la section
+    avec les boutons Ajouter, Modifier et Suprimmer pour ajouter, modifier ou suprimmer des items dans
+    la liste. Il est aussi possible de modifier un item en double cliquant dessus. 
+    Toutes ces actions peuvent aussi &ecirc;tres &eacute;ffectu&eacute;s dans le menu "Fichier" ou
+    "&Eacute;dition".</p>
+
+    <p>La fonction Compagnie (sur la barre d'outil ou dans le menu Affichage) vous donne acc&egrave;s
+    aux informations sp&eacute;cifique &agrave; la compagnie :</p>
+    <img src="images/f02.jpg">
+
+    <p>Il vous est alors possible de modifier les informations sur votre compagnie (nom, adresse,
+    t&eacute;l&eacute;phone etc.) et le logo. Vous pouvez aussi changer les valeus locales de 
+    la compagnie (taxes, symb&ocirc;le mon&eacute;taire, d&eacute;pots, etc.) dans la page
+    Configuration ainsi que les messages afficher lors de l'impression d'une transaction
+    (soumission, commande ou facture) dans la page Messages.</p>
+  </dd></dl>
+  <p><a href="aide.html">Retourner en haut de la page</a></p><br>
+
+  <a name="IInv"></a>
+  <dl><dt><h4>2.1.2 Inventaire</h4></dt>
+  <dd>
+    <p>Lorsque vous Ajoutez ou Modifiez un inventaire dans la fen&ecirc;tre principale, 
+    l'interface change pour le mode inventaire :</p>
+    <img src="images/f03.jpg">
+
+    <p>Vous pouvez alors modifier le contenu de l'inventaire mais vous ne pouvez plus acc&eacute;der
+    au sections pr&eacute;c&eacute;dentes tant que vous ne fermez pas l'inventaire. Un inventaire
+    contient une liste de groupes et chaque groupe contient une liste de produit. Lorsque vous
+    s&eacute;lectionnez un groupe dans la liste de gauche, tout les produits qu'il contient
+    sont afficher dans la liste de droite.</p>
+
+    <p>Dans la liste de produits, la collone "Tax&eacute;" indique si la taxe seras appliqu&eacute;
+    sur ce produit lors de la vente. Chaque produit contient aussi une valeur URL qui peut storer
+    une adresse internet qui sera utilis&eacute;e par le module web lorsqu'il afficheras ce produit
+    sur une page web.</p>
+
+    <p>Dans le mode inventaire la fonction "Fermer" devient disponible (sur la barre d'outil
+    ou dans le menu Fichier) pour vous permettre de fermer cet inventaire et de retourner
+    au mode compagnie (principal).</p>
+  </dd></dl>
+  <p><a href="aide.html">Retourner en haut de la page</a></p><br>
+
+  <a name="ITra"></a>
+  <dl><dt><h4>2.1.3 Transaction</h4></dt>
+  <dd>
+    <p>Lorsque vous Ajoutez ou Modifiez une transaction dans la fen&ecirc;tre principale,
+    l'interface change pour le mode transaction :</p>
+    <img src="images/f04.jpg">
+
+    <p>Contrairement a l'inventaire, une transaction de contient pas de groupes mais seulement
+    une liste de produits vendus. La quantit&eacute;e qui est alors afficher ici est celle vendue
+    et non celle en stock (en inventaire). Lorsque vous ajouter un produit &agrave; la liste vous
+    pouvez choisir de l'ajouter en tant que "Texte seulement", ce produit sera alors ajouter
+    &agrave; la liste mais le prix n'apparaitras pas et ne seras pas non plus ajouter au total
+    de la transaction. Il est aussi possible d'&eacute;crire un commentaire pour chaque produit
+    ajout&eacute;, il appara&icirc;tra sous le produit lors de l'impression.</p>
+
+    <p>Dans le mode transaction la fonction "Propri&eacute;t&eacute;es" devient disponible 
+    (sur la barre d'outil ou dans le menu Fichier) pour vous permettre d'entrer des donn&eacute;s
+    sp&eacute;cifique &agrave; la transaction:</p>
+    <img src="images/f05.jpg">
+
+    <p>Vous pouvez alors s&eacute;lectionner le type de la transaction (soumission,
+    commande ou facture). Le num&eacute;ro de la transaction seras calculer automatiquement
+    et appara&icirc;tra en dessous. Si cette transaction &agrave; d&eacute;ja &eacute;t&eacute;
+    sauvegarder avec un type diff&eacute;rent alors les num&eacute;ros des transactions
+    pr&eacute;c&eacute;dentes seront afficher aussi (ex.: vous cr&eacute;er une soumission
+    puis que plus tard vous la modifiez en facture, le num&eacute;ro de la soumission
+    appara&icirc;tras dans la facture). Le type de la transaction ne peut &ecirc;tre modifier
+    que dans un sens, vous pouvez changer une soumission en commande ou en facture, mais pas
+    l'inverse.</p>
+
+    <p>Lorsque vous enregistrer une facture une confirmation seras afficher et si vous accepter
+    les quantit&eacute;s des produits vendus seront soustraites de celle en inventaires. De plus
+    une vous ne pouvez pas faire de modification &agrave; une facture sauvegard&eacute;, sauf si
+    vous activer cette option dans la configuration de la compagnie. Il est aussi n&eacute;c&eacute;ssaire
+    de sauvegarder une facture avant de pouvoir l'imprimer.</p>
+  </dd></dl>
+  <p><a href="aide.html">Retourner en haut de la page</a></p><br>
+
+  <a name="IRep"></a>
+  <dl><dt><h4>2.1.4 Rapports</h4></dt>
+  <dd>
+    <p>La fonction Rapports (sur la barre d'outil ou dans le menu Affichage) vous permet de
+    g&eacute;n&eacute;rer des rapports sur les transactions de vote compagnie :</p>
+    <img src="images/f06.jpg">
+
+    <p>Un rapport est en fait un sommaire des valeurs de plusieurs transactions tel que les
+    totals, clients et produits vendus. Il vous suffit de choisir le type du rapport et une
+    p&eacute;riode (vous pouvez entrer les dates manuellement) puis de cliquer sur G&eacute;n&eacute;rer
+    et le contenu du rapport appara&icirc;tras dans la liste de donn&eacute;s. Puis vous pouvez imprimer
+    le rapport en cliquant sur le bouton Imprimer. Lorsque vous avez terminer cliquez sur Fermer.</p>
+  </dd></dl>
+  <p><a href="aide.html">Retourner en haut de la page</a></p><br>
+
+  <a name="Web"></a>
+  <dl><dt><h3>2.3 Module web</h3></dt>
+  <dd>
+    <p>Le module web du Vendeur Virtuel est un programme CGI qui peut &ecirc;tre &eacute;x&eacute;cuter
+    sur un serveur web pour afficher le contenu d'un inventaire sur une page web gr&acirc;ce 
+    &agrave; des balises HTML sp&eacute;ciales. L'utilisation de ce module n&eacute;c&eacute;ssite
+    une connaissance de base du language HTML.</p>
+  </dd></dl><br>
+
+  <a name="WCGI"></a>
+  <dl><dt><h4>2.3.1 C.G.I.</h4></dt>
+  <dd>
+    <p>CGI signifie <u>C</u>ommon <u>G</u>ateway <u>I</u>nterface, donc un programme
+    CGI est un lien entre l'information et l'utilisateur. Le programme, ou script CGI
+    est ex&eacute;cut&eacute; par un serveur HTTP et puis le r&eacute;sultat du programme,
+    le code HTML d'une page web, est envoyer au navigateur internet. Le programme CGI
+    peut donc chang&eacute; le contenu d'une page web en ajoutant ou suprimmant des informations,
+    cela est appel&eacute; une page web <u>dynamique</u>.</p>
+  </dd></dl><br>
+
+  <a name="WDes"></a>
+  <dl><dt><h4>2.3.2 Description</h4></dt>
+  <dd><p>Le module web du afficheras de l'information provenant de votre inventaires dans une
+      page web. Le fonctionnement est simple, vous cr&eacute;ez une page web dans laquelle vous
+      ajoutez des nouvelles balises sp&eacute;ciales qui, lors de l'affichage de la page, seront
+      lues par le module web et remplac&eacute;es par l'information demand&eacute;e. Chaque balise
+      d&eacute;signe une information sp&eacute;cifique de votre inventaire (nom de produit, prix, quantit&eacute;e,
+      nom de groupe, etc). Une fois la page termin&eacute;e il vous devrez avoir acc&egrave;s &agrave;
+      un serveur HTTP pour ex&eacute;cuter le module web sur depuis votre navigateur, vous devrez entrer
+      l'adresse de votre serveur, puis le nom du module web avec comme param&egrave;tre le nom de la
+      page d&eacute;sir&eacute;e, alors le module web sera &eacute;x&eacute;cuter par le serveur et
+      il remplaceras les balises sp&eacute;ciales par les informations d&eacute;sir&eacute;es avant
+      d'envoyer la page &agrave; au navigateur pour qu'elle soit afficher. Lisez la section
+      &Eacute;x&eacute;cution plus bas pour plus d'informations.</p>
+  </dd></dl><br>
+
+  <a name="WMod"></a>
+  <dl><dt><h4>2.3.3 Mod&egrave;les</h4></dt>
+  <dd><p>Une page web qui &agrave; &eacute;t&eacute; cr&eacute;er avez des commandes sp&eacute;ciale
+      pour le module web est appel&eacute;e  mod&egrave;le, puisque sans le module web cette
+      page ne peut pas &ecirc;tre visionn&eacute;e correctement et est incomplete.</p>
+  </dd></dl><br>
+
+  <a name="WTag"></a>
+  <dl><dt><h4>2.3.4 Balises</h4></dt>
+  <dd><p>Voici la liste des balises sp&eacute;ciales que vous pouvez utiliser avec le module web :</p>
+   <ul>
+    <li><p><i>&lt;Inventory&gt;</i></p>
+        <p>Cette balise est la plus importante. Elle ouvre un inventaire dans le module
+         web. Avant de pouvoir afficher quelques informations sur l'inventaire il doit &ecirc;tre
+         ouvert avec cette balise. Le module web ne peut ouvrir d'un fichier inventaire &agrave; la fois, si un
+         autre inventaire est ouvert, il seras fermer automatiquement. Cette balise peut aussi servir
+         &agrave afficher des informations sur l'inventaire ouvert, pour cela il n'est pas
+         n&eacute;cessaire d'inclure l'attribus Name, seul Value est n&eacute;cessaire
+         si un inventaire &agrave; &eacute;t&eacte; ouvert avant.</p>
+        <p>Attribus :
+        <ul>
+         <li>Name="..." : Le nom du fichier inventaire (.v3i) &agrave; ouvrir.</li>
+         <li>Value="..."
+          <ul>
+           <li>Date : Affiche la date de mise &agrave; jour de l'inventaire.</li>
+           <li>Description : Affiche la description de l'inventaire.</li>
+           <li>GroupCount : Affiche le nombre de groupes contenus dans l'inventaire.</li>
+          </ul></li>
+        </ul></p>
+    </li>
+
+    <li><p><i>&lt;/Inventory&gt;</i></p>
+        <p>Cette balise ferme l'inventaire ouvert.</p>
+    </li>
+
+    <li><p><i>&lt;Group&gt;</i></p>
+        <p>Cette balise affiche de l'information sur un groupe de l'inventaire.</p>
+        <p>Attribus :
+        <ul>
+         <li>Code="..." : Le code du groupe d&eacute;sirer</li>
+         <li>Value="..."
+          <ul>
+           <li>Name : Affiche le nom du groupe.</li>
+           <li>ProductCount : Affiche le nombre de produits contenus dans le groupe.</li>
+          </ul></li>
+        </ul></p>
+    </li>
+
+    <li><p><I>&lt;Product&gt;</I></p>
+        <p>Cette balise affiche de l'information sur un produit de l'inventaire.</p>
+        <p>Attribus :
+        <ul>
+         <li>Group="..." : Le code du groupe contenant le produit d&eacute;sirer.</li>
+         <li>Number="..." : Le num&eacute;ros du produit d&eacute;sirer.</li>
+         <li>Value="..."
+          <ul>
+           <li>Name : Affiche le nom du produit.</li>
+           <li>WebAdress : Affiche l'URL du produit.</li>
+           <li>Price : Affiche le prix du produit.</li>
+           <li>Quantity : Affiche la quantit&eacute;e de produit en stock.</li>
+           <li>Taxed : Affiche si les taxes doivent &ecirc;tre appliqu&eacute;es sur le produit (affiche un T si oui).</li>
+          </ul></li>
+        </ul></p>
+    </li>
+
+    <li><p><I>&lt;Table&gt;</I></p>
+        <p>Ce n'est pas une nouvelle balise mais de nouveaux attribus permettent
+           d'afficher le contenu d'un inventaire ou d'un groupe entier. Utilisez seulement
+           cette balise avec les nouveaux attribus (sans aucun TH, TR, TD, ou /TABLE),
+           le module web cr&eacute;era les lignes et les colonnes automatiquement.
+           Tous les autres attribus de la balise peuvent &ecirc;tre ajouter pour modifier
+           son apparance.</p>
+        <p>Attribus :
+        <ul>
+         <li>Value="..."
+          <ul>
+           <li>Groups : Affiche la liste des groupes de l'inventaire.</li>
+           <li>Products : Affiche la liste de produits d'un groupe ou de l'inventaire complet.</li>
+          </ul></li>
+         <li>Group="..." : Le code du groupe &agrave; afficher lorsque Value="products", si cet
+             attribut n'est pas inclus l'inventaire complet sera affich&eacute;.</li>
+        </ul></p>
+    </li>
+   </ul><br>
+
+   <p>Vous pouvez regarder la source du fichier exemple-fr.html situ&eacute; dans le dossier
+   "Virtual Salesman\Web" pour avoir un aper&ccedil;u de la cr&eacute;ation d'un mod&egrave;le.
+   Vous pouvez aussi faire fonctionner cet exemple avec l'inventaire "exemple.v3i" inclus.
+   Simplement suivre les &eacute;tapes de la section "Ex&eacute;cution" plus bas pour faire afficher
+   cet exemple par le module web sur un serveur http.</p>
+  </dd></dl><br>
+
+  <a name="WExe"></a>
+  <dl><dt><h4>2.3.5 Ex&eacute;cution</h4></dt>
+  <dd>
+    <p>Pour utiliser le module web il faut tout dabord avoir acc&egrave;s &agrave; un
+    serveur http qui permet l'ex&eacute;cution de programme CGI binaires, ensuite
+    il suffit de copier le fichier "VS3.cgi" dans le dossier CGI du serveur (cgi-bin) ainsi
+    que les mod&egrave;les et les inventaires, il est recommand&eacute; de
+    cr&eacute;er un dossier s&eacute;parer pour les mod&egrave;les et un pour les inventaires. 
+    Dans un navigateur, taper l'adresse du fichier CGI tout en lui passant le nom du
+    mod&egrave;le d&eacute;sirer en param&egrave;tre (ex.: http://www.monsiteweb.com/cgi-bin/VS3.cgi?modeles/webexemple.html).
+    Si le module web ne trouve pas le mod&egrave;le sp&eacute;cifier un message d'erreur sera
+    affich&eacute;. Notez que dans les mod&egrave;les le nom du fichier inventaire doit &ecirc;tre
+    relatif &agrave; partir du dossier racine du module, et nom du mod&egrave;le. Si un mod&egrave;le
+    tente d'ouvrir un inventaire qui n'est pas trouvable par le module, le module affichera
+    un message d'erreur dans la page &agrave; la place de la valeur demand&eacute;e.</p>
+
+    <p>Le module peut recevoir le param&egrave;tre par la m&eacute;thode Get ou Post,
+    Post est recommand&eacute; puisque le nom de fichier du mod&egrave;le n'apparait pas
+    dans l'adresse. Selon le type du serveur, le dossier courrant peut varier, il faut donc demander
+    &agrave; l'administrateur r&eacute;seau pour savoir depuis quel dossier le module vas
+    chercher les fichiers demand&eacute;es. Pour certain serveur, il cherche depuis la
+    racine, donc "VS3.cgi?webexemple.html" chercheras webexemple.html dans le dossier
+    racine, m&ecirc;me si le module est situ&eacute; dans le dossier cgi-bin (sur Apache
+    il cherche depuis cgi-bin).</p>
+  </dd></dl>
+  <p><a href="aide.html">Retourner en haut de la page</a></p><br>
+
+  <a name="Data"></a>
+  <dl><dt><h2>3.0 Structures de donn&eacute;es</h2></dt>
+  <dd>
+    <p>Le Vendeur Virtuel store toute l'information de votre compagnie dans un dossier unique,
+    &agrave; l'int&eacute;rieur on retrouve le fichier contenant les informations de la compagnie ainsi
+    que les fichiers d'inventaires et de transactions de la compagnie. Lors de la cr&eacute;ation d'une
+    nouvelle compagnie vous devrez sp&eacute;cifier le nom de ce dossier. Il est donc tr&egrave;s
+    facile d'&eacute;ffectuer une copie de sauvegarde de votre compagnie en copiant tout le dossier 
+    et son contenu sur une disquette ou en le compressant &agrave; l'aide de programmes comme WinZip.</p>
+  </dd></dl><br>
+
+  <a name="Encr"></a>
+  <dl><dt><h3>3.1 Encryption</h3></dt>
+  <dd>
+    <p>Tout les fichiers utilis&eacute;s par le Vendeur Virtuel sont enregistr&eacute;s
+    avec une encryption de 32bits &agrave; cl&eacute; multiples. Ce qui empêche la modification
+    des fichiers par un autre logiciel et rendant ainsi toutes les donn&eacute;es de votre
+    compagnie totalement s&eacute;curitaires.</p>
+  </dd></dl><br>
+
+  <a name="Conc"></a>
+  <dl><dt><h2>4.0 Conclusion</h2></dt>
+  <dd><p>
+      Pour toute autre information, question ou commentaire, vous pouvez me contacter par
+      courriel &agrave; <a href="mailto:marc@marcandre.info">marc@marcandre.info</a>.</p>
+
+      <p>Merci d'utiliser le Vendeur Virtuel 3.</p>
+  </dd></dl>
+  <p><a href="aide.html">Retourner en haut de la page</a></p><br> 
+ </body>
+</html>

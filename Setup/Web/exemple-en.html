@@ -1,0 +1,50 @@
+<!-- This template is to be used with the Vendeur Virtuel web module only. -->
+<html>
+ <head>
+  <title>Vendeur Virtuel 3 : Web module - Exemple</title>
+  <meta name="author" content="Marc-Andre Lamothe">
+  <meta name="generator" content="TED Notepad">
+  <style type="text/css"><!--
+   body,table {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;}
+   a {color: #3253BE;}
+   a:visisted {color: #3253BE;}
+   a:hover {background-color: #3253BE; color: #FFFFFF;}
+   h1 {font-size: 22px;} h3 {font-size: 16px;} h3 {font-size: 14px;} h4 {font-size: 12px;} h5 {font-size: 10px;}
+  --></style>
+ </head>
+ <body><table border="0" width="650"><tr><td>
+  <h2>Vendeur Virtuel 3 : Web module</h2>
+  <p>for more information, visit my website <a href="http://www.marcandre.info" target="_blank">Http://www.marcandre.info</a><br>
+  or write to me at <a href="mailto:Marc@Marcandre.info">marc@marcandre.info</a></p>
+  <p>Copyright &copy; 1998-2005 Marc-andr&eacute; Lamothe.<hr><br></p>
+
+  <p>This page is an exemple of how to use the web module, you can run this exemple on a server
+  with the provided exemple.v3i inventory file in the web module folder (..\Vendeur Virtuel\Web)
+  by following the steps of the Executing section of the online help.</p>
+
+  <h3>Exemple :</h3>
+
+  <Inventory name="exemple">
+   <p>The inventory <b>Exemple</b> (<b><Inventory value="Description"></b>) was last updated on <b><Inventory value="Date"></b>
+   and contains <b><Inventory value="GroupCount"></b> groups.</p>
+
+   <p>The group with the code <b>GR1</b> is called <b><Group code="GR1" value="Name"></b>
+   and contains <b><Group code="GR1" value="ProductCount"></b> products.</p>
+
+   <p>The product number <b>GR2002</b> of the group <b>GR2</b> is called <b><Product group="GR2" number="GR2002" value="Name"></b>,<br>
+   it's price is $<b><Product group="GR2" number="GR2002" value="Price"></b> and the availlable quantity is
+   <b><Product group="GR2" number="GR2002" value="Quantity"></b>.</p>
+
+   <br>
+   Here is a list of all the groups inside the <b>Exemple</b> inventory :<br>
+   <Table Value="Groups" Border="2" Width="50%">	
+   <br>  
+   Here is a list of the products inside the group <b>GR1</b> :<br>
+   <Table Value="Products" Group="GR1" Border="2" Width="50%">
+   <br>
+   Here is a list of all the products inside the <b>Exemple</b> inventory :<br>
+   <Table Value="Products" Border="2" Width="50%">	
+
+  </Inventory>
+ </td></tr></table></body>
+</html>

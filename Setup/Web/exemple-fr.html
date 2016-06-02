@@ -1,0 +1,51 @@
+<!-- Ce document est conçus pour être utiliser dans le module web du Vendeur Virtuel seulement -->
+<html>
+ <head>
+  <title>Vendeur Virtuel 3 : Module web - Exemple</title>
+  <meta name="author" content="Marc-Andre Lamothe">
+  <meta name="generator" content="TED Notepad">
+  <style type="text/css"><!--
+   body,table {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;}
+   a {color: #3253BE;}
+   a:visisted {color: #3253BE;}
+   a:hover {background-color: #3253BE; color: #FFFFFF;}
+   h1 {font-size: 22px;} h3 {font-size: 16px;} h3 {font-size: 14px;} h4 {font-size: 12px;} h5 {font-size: 10px;}
+  --></style>
+ </head>
+ <body><table border="0" width="650"><tr><td>
+  <h2>Vendeur Virtuel 3 : Module web</h2>
+  <p>Pour plus d'information visitez mon site web <a href="http://www.marcandre.info" target="_blank">Http://www.marcandre.info</a><br>
+  ou &eacute;crivez-moi &agrave; <a href="mailto:Marc@Marcandre.info">marc@marcandre.info</a></p>
+  <p>Copyright &copy; 1998-2005 Marc-andr&eacute; Lamothe<hr><br></p>
+
+  <p>Ceci est un exemple d'utilisation du module web, vous pouvez &eacute;x&eacute;cuter cet
+  exemple avec l'inventaire fournis dans le dossier du module web (..\Vendeur Virtuel\Web) en suivant
+  les &eacute;tapes de la section &Eacute;x&eacute;cution dans l'aide en ligne.</p>
+
+  <h3>Exemple :</h3>
+
+  <Inventory name="exemple">
+   <p>L'inventaire <b>Exemple</b> (<b><Inventory value="Description"></b>) &agrave; &eacute;t&eacute;
+   mis &agrave; jour le <b><Inventory value="Date"></b>
+   et contient <b><Inventory value="GroupCount"></b> groupes.</p>
+
+   <p>Le groupe poss&eacute;dant le code <b>GR1</b> se nome <b><Group code="GR1" value="Name"></b>
+   et contient <b><Group code="GR1" value="ProductCount"></b> produits.</p>
+
+   <p>Le produit num&eacute;ro <b>GR2002</b> du groupe <b>GR2</b> se nome <b><Product group="GR2" number="GR2002" value="Name"></b>,<br>
+   son prix est de <b><Product group="GR2" number="GR2002" value="Price"></b>$ et 
+   <b><Product group="GR2" number="GR2002" value="Quantity"></b> sont disponibles.</p>
+
+   <br>
+   Voici les groupes de l'inventaire <b>Exemple</b> :<br>
+   <Table Value="Groups" Border="2" Width="50%">	
+   <br>  
+   Voici le contenu du groupe <b>GR1</b> :<br>
+   <Table Value="Products" Group="GR1" Border="2" Width="50%">
+   <br>
+   Voici les produits de l'inventaire <b>Exemple</b> :<br>
+   <Table Value="Products" Border="2" Width="50%">	
+
+  </Inventory>
+ </td></tr></table></body>
+</html>

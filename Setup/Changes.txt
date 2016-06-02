@@ -1,0 +1,217 @@
+22/12/2006 : version 3.3.3
+
+  - Fixed a bug that would not update the transaction list correctly.
+  - Fixed a bug that would not display the correct payment type in the transaction list.
+  - Fixed a bug that would display an error when trying to edit an item in an empty list.
+  - Fixed a bug that would not allow to import file exported with MS Excel correctly.
+  - Fixed a bug that would not update the display correctly when creating a new company.
+
+23/06/2006 : version 3.3.2
+
+  - Modified the auto update function to search in the background.
+  - Fixed a bug that would not display inventory modifications when adding product to transactions.
+  - Fixed a bug that would not save a transaction after you enter the missing properties.
+
+12/05/2006 : version 3.3.1
+
+  - Added access to a context menu on the toolbar to customize it.
+  - Added automatic deletion of a product's supplier when they no longer exists.
+  - Added import and export support for .csv files (Comma Separated Values).
+  - Fixed a bug that would allow to add the same number or code twice in a list.
+  - Fixed a bug that would open the wrong company when opening a company manually.
+  - Fixed a bug with the edit user window, the rights where not displayed correctly.
+  - Fixed a bug with the undo and redo when adding product to a transaction.
+
+26/04/2006 : version 3.3.0
+
+  - Added support for the new version of language packs.
+  - Added a button to delete the logo in the company information window.
+  - Added resizability to the company, client and product selection windows.
+  - Changed the appearance of the menu and toolbar to the traditionnal style.
+  - Changed the format used for saving transactions.
+  - Fixed a bug that would cause an error opening the menu when there are no group in the list.
+  - Fixed a bug with the bottom margin during printing.
+  - Fixed a bug with the dates when printing a report.
+  - Fixed alot of translation errors.
+  - And alot more minor fixes and changes.
+
+05/12/2005 : version 3.2.3
+
+  - Fixed a bug with the closing of a modified inventory.
+  - Fixed a bug with the display of the Undo function in the Edit menu.
+  - Fixed a bug with the selection of clients in the operation properties.
+  - Fixed a bug with the selection of languages.
+  - Added a Report bug function in the help menu.
+  - Added Spanish language pack.
+
+23/10/2005 : version 3.2.2
+
+  - Added a list of suppliers for each product.
+  - Added undo and redo toolbar buttons.
+  - Changed the layout of the options window.
+  - Removed the logo display on program startup.
+  - Fixed a bug with the saving of the zoom value in the print page.
+
+29/08/2005 : version 3.2.1
+
+  - Fixed a few bugs with the translation.
+  - Added Undo and Redo features!
+  - Added license name and product key to register the program.
+
+01/07/2005 : version 3.2.0
+ 
+  - Changed the security system to username and password, and each user's rights can be customized.
+  - Added clients and products summary information to reports.
+  - Added operation history and sales summary to the client's information window.
+  - Also some other minor changes and fixed.
+
+26/06/2005 : version 3.1.9
+
+  - Added the possibility to search the list of clients when selecting them in the operations properties.
+  - Fixed a few translation and language packs bugs.
+
+14/06/2005 : version 3.1.8
+
+  - Changed the translation to external language pack files, wich will allow the program to support alot more languages.
+
+31/05/2005 : version 3.1.7
+
+  - Added the display of a page preview when printing a document.
+  - Added the option to allow nor not modifications to invoices in the company.
+  - Added the selection of the salesman in the operation properties.
+  - Changed the print margins values in the options to millimeters instead of pixels.
+
+20/05/2005 : Version 3.1.6
+
+  - Added the option to change the currency sign in the company's information.
+  - Changed the printing unit so that the text position is now calculated relative to the page.
+  - Fixed a bug that would allow to print operations without specifying it's properties.
+  - Fixed a bug that would not display the title of the dialog windows.
+  - Fixed alot of translation bugs.
+
+12/05/2005 : Version 3.1.5
+
+  - Added English and French online help.
+  - Added the automatic display of the company information window when creating a new company.
+  - Added the automatic translation of the option windows when the language is changed.
+  - Fixed a bug with the display of the inventory list when selecting a product in an operation.
+  - Fixed alot of translation bugs.
+
+17/02/2005 : Version 3.1.4
+
+  - Changed the operations tab controls and the way the salesman is selected when making a new operation.
+  - Added the options to translate the program in english.
+  - Changed the information store in an operation, now all the information about the client and recipient is in the file, not just the numbers.
+  - Changed the operation properties window, rearanged controls and changed the way client and recipient and displayed.
+  - Fixed a bug that would display the wrong total in the operation properties window.
+  - Removed the Social Security Number feild of the employee's list.
+  - Changed the way product are added to an operation, they are not longer sorted automaticly.
+  - Changed the company's information to include a 4th line in the operation's messages.
+
+17/11/2004 : Version 3.1.3
+
+  - Fixed a bug with the selection of the client in an operation, when selecting an existing client a copy would be added in the client list.
+  - Added a "new client" button in the client selection windows to add new clients while in an operation's properties.
+  - Changed the way data structures are added to a list so now added items are selected automaticly.  
+  - Added captions to toolbar items and added a "Toolbars" section in the "View" menu to change its appearance.
+
+13/11/2004 : Version 3.1.2
+
+  - Fixed a bug that with the creation of new companies.
+  - Added a message that asks to create a new company automaticly if no company is opened.
+  - Added an error message that occurs when the selling price is lower than the cost.
+  - Changed the selection of the client in an operation, now the client has to be saved into the database to be selected.
+
+11/05/2004 : Version 3.1.1
+
+  - Added support to create and modify operations in the gestion module.
+  - Removed the sales module, the Vendeur Virtuel is now consisted only of one module.
+  - Fixed a bug with calculating the price from cost when entering a decimal percentage.
+  - Added an option to search again from list's start when text is not found in the list.
+  - Fixed a bug with file conversion wich would produce unreadable files.
+
+23/04/2004 : Version 3.1.0
+
+  - Changed client, employee, supplier and product numbers, group codes and inventory names can no longer be modified.
+  - Changed all the data management algorithms from dynamic arrays to linked lists.
+  - Added, every file now saves a header containing its content type and version.
+  - Added more detailed file access error messages.
+  - Changed Client, Employee and Supplier lists are no longer the same list type.
+  - Changed, the employees, clients and suppliers lists are saved within the company file (.vv3).
+  - Added 3 new fields in Clients wich will contain the list of its operations.
+  - Added a new field in Employees for the Social Security Number.
+  - Added a new field in Product wich will contain the list of its suppliers.
+  - Changed, only the employee and client's number are saved within an operation file.
+  - Changed, the saving of the client list when adding a client in Vente module is now done when u save the operation.
+  - Changed the printing algorithms and fixed a few bugs.
+  - Changed autosave, save as backup options has been removed.
+  - Fixed and cleaned alot of code for optimisation.
+
+04/04/2004 : Version 3.0.9
+  - Fixed a bug that would prevent the display of clients and suppliers if the employee list was empty.
+  - Fixed a bug that would load entire inventories just to list the inventory names.
+  - Changed the size and disposition of some of the module's windows.
+
+23/01/2004 : Version 3.0.8
+
+  - Added automatic update verification.
+  - Changed the error messages, regrouped them in simple procedures.
+  - Added support for Windows XP visual styles.
+  - Changed and updated the help file.
+  - Added a color frame around the active list in the gestion module.
+  - Added the replacement of french characters (é, à, û, etc.) to HTML code in the Web module.
+
+25/11/2003 : Version 3.0.7
+
+  - Fixed the display of the version number in the about window.
+  - Added DBTool.exe, a tool to convert or backup companies.
+
+09/11/2003 : Version 3.0.6
+  
+  - Added, if Orange Calculator isn't found, window's calculator is used.
+  - Changed the registry key names.
+  - Added a LoadHeaderFromFile function for faster loading.
+  - Added an error messages is displayed if saving fails.
+  - Added, now you can calculate retail price from cost price.
+  - Added creation of reports in the gestion module.
+  - Changed the file reading and writing algorithm.
+
+01/09/2003 : Version 3.0.5
+
+  - Fixed, a bug that would have the products substracted from inventory twice when
+    printing another copie.
+  - Added, a saved invoice cannot be modified anymore.
+  - Changed the number in an operation filename to 000000 digits instead of 00000.
+
+31/08/2003 : Version 3.0.4
+
+  - Fixed a bug with the calculating of provincial taxes.
+  - Changed some code in the printing procedures.
+  - Added the option to change the print margins.
+  - Fixed a bug in the sale module that would only save invoices.
+
+28/08/2003 : Version 3.0.3
+
+  - Changed the starting number of operations to 100 instead of 10000.
+  - Fixed a bug with saving the client, employees and suppliers.
+
+23/08/2003 : Version 3.0.2
+
+  - Fixed a bug with saving operations.
+  - Fixed a bug with the operation open window.
+  - Fixed a bug with the client and employee selection window.
+  - Changed the default password settings to false.
+  - Added, display of the default password in the options page.
+
+20/06/2003 : Version 3.0.1
+
+  - Changed the code so that numbers and codes cannot be blank.
+  - Changed the function LoadInFile and SaveInFile to ReadInFile and WriteInFile.
+  - Changed the headers to include email and copyright information.
+
+09/06/2003 : Version 3.0
+
+  - Modified so the operation number is 0 when none and the first operation will be 1001 instead of 1.
+  - Modified the operations properties so that 0 will be displayed if it does not yet have any number (instead of -1).
+  - Added a cost to products.
+  - Added some new html help files.

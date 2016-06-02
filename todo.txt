@@ -1,0 +1,3 @@
+Options pour imprimmer des listes de prix, on choisis les groupes desiree dans l'inventaire et quelle donnee imprimmer.
+
+Module web : permettre l'affichage de produits dans un menu deroulant avec le prix ou numero comme valeur.

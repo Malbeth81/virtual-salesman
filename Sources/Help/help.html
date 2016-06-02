@@ -1,0 +1,380 @@
+<html>
+ <head>
+    <title>Virtual Salesman 3</title>
+    <meta name="author" content="Marc-Andre Lamothe">
+    <meta name="generator" content="TED Notepad">
+    <style type="text/css"><!--
+      body, table {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;}
+      a {color: #3253BE;}
+      a:visisted {color: #3253BE;}
+      a:hover {background-color: #3253BE; color: #FFFFFF;}
+      h1 {font-size: 22px;} h3 {font-size: 16px;} h3 {font-size: 14px;} h4 {font-size: 12px;} h5 {font-size: 10px;}
+      ul {list-style-type: disc;} ul ul {list-style-type: circle;} ul ul ul {list-style-type: square;}
+      .black {color: #000000; font-weight: bold;)
+    --></style>
+ </head>
+ <body>
+  <h1>Virtual Salesman 3</h1>
+  <p>for more information, visit my website <a href="http://www.marcandre.info" target="_blank">http://www.marcandre.info</a><br>
+  or write to me at <a href="mailto:Marc@Marcandre.info">marc@marcandre.info</a></p>
+  <p>Copyright &copy;1998-2005 Marc-andr&eacute; Lamothe.<hr>
+  <a href="aide.html">Clickez ici pour la version en fran&ccedil;ais</a></p><br>
+
+  <ol>
+    <li><a class="black" href="#Intro">Introduction</a><ul>
+      <li><a href="#Desc">Description</a></li>
+      <li><a href="#Hist">Historic</a></li>
+    </ul></li>
+    <li><a class="black" href="#VV3">Virtual Salesman 3</a><ul>
+      <li><a href="#Int">Interfaces</a><ul>
+        <li><a href="#IMain">Main</a></li>
+        <li><a href="#IInv">Inventory</a></li>
+        <li><a href="#ITra">Transaction</a></li>
+        <li><a href="#IRep">Report</a></li>
+      </ul></li>
+      <li><a href="#Web">Web module</a><ul>
+        <li><a href="#WCGI">C.G.I.</a></li>
+        <li><a href="#WDes">Description</a></li>
+        <li><a href="#WMod">Template</a></li>
+        <li><a href="#WTag">Tags</a></li>
+      <li><a href="#WExe">Executing</a></li>
+      </ul></li>
+    </ul></li>
+    <li><a class="black" href="#Data">Data structures</a><ul>
+      <li><a href="#Encr">Encryption</a></li>
+    </ul></li>
+    <li><a class="black" href="#Conc">Conclusion</a></li>
+  </ol><br><br>
+
+  <a name="Intro"></a>
+  <dl><dt><h2>1. Introduction</h2></dt></dl>
+
+  <a name="Desc"></a>
+  <dl><dt><h3>1.1 Description</h3></dt>
+  <dd>
+    <p>The Virtual Salesman is a new generation of selling software destined to small and medium
+    bussinesses and independant workers. It was designed to allow you to easily manage inventories
+    and invoices, so it does not allow you to do any accounting. This specialisation makes it is
+    very fast, versatile and simple to use.</p>
+
+    <p>It allows you to easily manage inventories, employees, clients and suppliers lists. And it
+    is possibile to create and manage more than one company with the same software. It is the
+    best alternative to writing your invoice by hand or using Spreadsheets like Excel since
+    it allows the automatisation of selling procedures and inventory management and,
+    with the web module, you can use your inventories online, allowing you clients to directly 
+    have access to your most recent products and prices.</p>
+  </dd></dl><br>
+
+  <a name="Hist"></a>
+  <dl><dt><h3>1.2 Historic</h3></dt>
+  <dd>
+    <p>Virtual Salesman is the fruit of over 6 years of hard work and research. It started as a
+    replacement to a webpage wich allowed people to created quotations online to buy a computer.
+    Programmed in C++ the first version didn't offer much more than the original webpage. Later
+    on when version 2.0 came out it offered dynamic lists and new fonctionnalities making it alot
+    more efficient. On January 2000 started the work on the 3.0 version, wich was going to be
+    the first totaly polyvalent and flexible version.</p>
+
+    <p>For the 3.0 version the entire code was re-written from scratch and the application
+    was completely re-designed, but when it was almost completed some problems occured with C++ 
+    memory allocation, causing the program to crash and i decided to change for the
+    pascal language with Borland Delphi instead of Borland C++ Builder 5.0. Everything had
+    to be re-written again but without any problem this time and the version 3.0 came out
+    June 3, 2003.</p>
+
+    <p>Until then the Virtual Salesman always was in two modules, a management module and a selling
+    module, but with version 3.0 arrised problems with data consistency because the selling
+    module needed to modify the inventory and clients list to allow to add new clients and
+    substact sold quantities from inventory, and problems would arise if both modules would
+    read/write data in the same file at the same time one of the modules would loose the written
+    data. For that reason in May 2004 it was decided that the version 3.1.1 would be composed
+    of only one program instead of two.</p>    
+  </dd></dl>
+  <p><a href="help.html">Return to top of page</a></p><br>
+
+  <a name="VV3"></a>
+  <dl><dt><h2>2. Virtual Salesman</h2></dt>
+  <dd>
+    <p>The Virtual Salesman fully integrates the management of all of your company's information,
+    like the maintain of employees, clients, and suppliers list aswell as the creation of inventories
+    and transactions</p>
+  </dd></dl><br>
+
+  <a name="Int"></a>
+  <dl><dt><h3>2.1 Interfaces</h3></dt></dl>
+
+  <a name="IMain"></a>
+  <dl><dt><h4>2.1.1 Main</h4></dt>
+  <dd>
+    <p>This is the main window of the Virtual Salesman :</p>
+    <img src="images/e01.jpg">
+
+    <p>It's user interface is very simple and easy to use, simply select one of the 5 tabs
+    (Inventories, Employees, Clients, Suppliers or Transactions) to instantly view all of your
+    company's information in that section.</p>
+
+    <p>After selecting a page, the Print, Undo, Redo, Add, Edit, Delete and Find functions will 
+    only apply to the selected list but the others (like Open and Save) are global. You can modify
+    the contained data by clicking on the Add, Edit or Delete buttons of the toolbar to add
+    edit or remove items in the list. It is also possible to modify an existing item simply by
+    double clicking on it. All of those functions can also be acessed in the "File" or "Edit" menu.</p>
+
+    <p>The Company function (on the toolbar or the View menu) allows you to access your
+    company specific information :</p>
+    <img src="images/e02.jpg">
+
+    <p>You can edit the company's information (name, address, telephone, ect.) and it's logo.
+    You can also edit the company's local values (tax rates, currency, deposit, etc.) in the
+    Configuration page and the messages that will be displayed when printing transactions
+    (quotations, orders or invoices) in the Messages page.</p>
+  </dd></dl>
+  <p><a href="help.html">Return to top of page</a></p><br>
+
+  <a name="IInv"></a>
+  <dl><dt><h4>2.1.2 Inventory</h4></dt>
+  <dd>
+    <p>When you Add or Edit an inventory in the main view, the window will changes
+    to the inventory display mode :</p>
+    <img src="images/e03.jpg">
+
+    <p>You can then modify the content of that inventory but you cannot access the
+    previous sections until you close the inventory. An inventory contains a list of groups,
+    and each group contains a list of products. By selecting a group from the
+    list on the left, its products will appear on the right.</p>
+
+    <p>In the list, the Taxed collumn shows if taxes are applied to that product when they
+    are sold. Each product also has an URL value wich you can use to store an http address
+    wich will be used by the Web module when displaying that product on a web page.</p>
+
+    </p>In the inventory mode, the Close function becomes availlable (on the toolbar or in the
+    File menu) to allow you to close the inventory and return to the company display mode.</p>
+  </dd></dl>
+  <p><a href="help.html">Return to top of page</a></p><br>
+
+  <a name="ITra"></a>
+  <dl><dt><h4>2.1.3 Transaction</h4></dt>
+  <dd>
+    <p>When you add or edit a Transaction in the main view, the window will change
+    to the transaction display mode :</p>
+    <img src="images/e04.jpg">
+
+    <p>Unlike inventories, an operation doesn't have any groups but only a list of the products
+    that are sold. The quantity shown here is the one that is sold, and not the one in stock
+    (in the inventory). When you add a product to the list you can choose to add it has Text Only,
+    this product will be added like others but the price will not appear and will not be added 
+    to the total of the transaction. You can also write comments for each products, wich
+    will show below the product when the transaction is printed.</p>
+
+    <p>In the transaction mode, the Properties function becomes availlable (on the toolbar or in the
+    File menu) to allow you to specify the transaction's specific properties :</p>
+    <img src="images/e05.jpg">
+
+    <p>You can then select the type of the operation (quotation, order or invoice). The
+    transaction's number will be automaticly calculated and will appear in the field below.
+    If this transaction was already saved before has a different type then the number
+    of the previous transaction type will also appear (ex.: when you create a quotation
+    and a few days later you change it to an invoice, the quotation number will appear
+    in the invoice). You can only change the transaction's type to a higher type, you can
+    change a quote to an order or an invoice but you cannot do the opposite.</p>
+
+    <p>When saving an new invoice, a confirmation will appear and if you agree then the quantity
+    of each of the product sold will be removed from the quantity of that product in the inventory.
+    Also you cannot modify a saved invoiced, unless you enable the options in the company
+    configuration page, so make sure that the invoice is correct before saving it. It is also
+    mandatory to save an invoice before you are allowed to print it.</p>
+  </dd></dl>
+  <p><a href="help.html">Return to top of page</a></p><br>
+
+  <a name="IRep"></a>
+  <dl><dt><h4>2.1.4 Report</h4></dt>
+  <dd>
+    <p>The Report function (on the toolbar or in the View menu) allows you to generate reports
+    on your company's transactions:</p>
+    <img src="images/e06.jpg">
+
+    <p>A report is in fact a summary of the transaction's values like totals, clients and products sold.
+    Simply choose the report type and a period (you can also manually enter the dates) and click on
+    the Generate button and the information will display in the list bellow. Then you can print
+    the report by clicking on the Print button. Once your are done you can click on Close.</p>
+  </dd></dl>
+  <p><a href="help.html">Return to top of page</a></p><br>
+
+  <a name="Web"></a>
+  <dl><dt><h3>2.3 Web module</h3></dt>
+  <dd>
+    <p>The web module of the Virtual Salesman is a CGI program that can be runned on web
+    site to display the content of an inventory in a web page by adding new special
+    HTML tags to your web page. To use this module it is important to have basic knowledge
+    of the HTML language.</p>
+  </dd></dl><br>
+
+  <a name="WCGI"></a>
+  <dl><dt><h4>2.3.1 C.G.I.</h4></dt>
+  <dd>
+    <p>CGI means <u>C</u>ommon <u>G</u>ateway <u>I</u>nterface, so basicly a CGI program
+    is a program that serves has a link between the data and the user. The CGI software or
+    script is executed by an HTTP server and the result, wich is the html code of a web page,
+    is sent to the end user's browser. The CGI program can then change the content of the
+    web page it will returns by adding or removing informations, this is called a <u>dynamic</u>
+    web page.</p>
+  </dd></dl><br>
+
+  <a name="WDes"></a>
+  <dl><dt><h4>2.3.2 Description</h4></dt>
+  <dd>
+    <p>The web module will display information from your inventory on a
+    web page. The way it works is simple, you create a web page in wich you include special
+    HTML tags that, when the page is displayed, will be read by web module and replaced
+    with the requested information from the inventory. Each tags represent a
+    specific information from the inventory (product name, price, quantity, group name, etc.)
+    Once the page is completed, you will need a running HTTP server to execute the
+    CGI program from your browser, you must type in the address field of your browse
+    the name of the web module on the server with the desired web page as a parameter,
+    then the module will execute on the server, replace the special tags in the web page
+    with the requested information and send the page to your browser to be displayed.
+    See the Executing section below for more details.</p>
+  </dd></dl><br>
+
+  <a name="WMod"></a>
+  <dl><dt><h4>2.3.3 Template</h4></dt>
+  <dd>
+    <p>A web page that was created with the special HTML tags for the web module is
+    called a template, since without the web module, the page itself is not complete and will
+    not display correctly.</p>
+  </dd></dl><br>
+
+  <a name="WTag"></a>
+  <dl><dt><h4>2.3.4 Tags</h4></dt>
+  <dd><p>Here is the list of special tags you can use with the web module :</p>
+   <ul>
+    <li><p><i>&lt;Inventory&gt;</i></p>
+        <p>This is the most important tag of all. It allows the web module to open the
+        specified inventory. Before any information can be displayed from an inventory,
+        it must first be opened with this tag. The web module can only open one inventory at
+        a time, if another inventory is opened, the previous one will be closed. This tag
+        can also be used to display information about the inventory itself, then you do not
+        have to include the Name attribute if you opened the inventory earlier.</p>
+        <p>Attributes :
+        <ul>
+         <li>Name="..." : The name and path of the inventory file (.v3i) to open.</li>
+         <li>Value="..."
+          <ul>
+           <li>Date : Shows the last modified date of the inventory.</li>
+           <li>Description : Shows the inventory's description.</li>
+           <li>GroupCount : Shows the number of groups the inventory contains.</li>
+          </ul></li>
+        </ul></p>
+    </li>
+
+    <li><p><i>&lt;/Inventory&gt;</i></p>
+        <p>This tag closes the opened inventory.</p>
+    </li>
+
+    <li><p><i>&lt;Group&gt;</i></p>
+        <p>This tag shows information about a group of the inventory.</p>
+        <p>Attributes :
+        <ul>
+         <li>Code="..." : The code of the desired group.</li>
+         <li>Value="..."
+          <ul>
+           <li>Name : Shows the name of the group.</li>
+           <li>ProductCount : Shows the number of product this group contains.</li>
+          </ul></li>
+        </ul></p>
+    </li>
+
+    <li><p><I>&lt;Product&gt;</I></p>
+        <p>This tag shows information about a specific product from the inventory.</p>
+        <p>Attributes :
+        <ul>
+         <li>Group="..." : The code of the group containing the desired product.</li>
+         <li>Number="..." : The number of the desired product.</li>
+         <li>Value="..."
+          <ul>
+           <li>Name : Shows the name of the product.</li>
+           <li>WebAdress : Shows the URL of the product.</li>
+           <li>Price : Shows the price of the product.</li>
+           <li>Quantity : Shows the quantity of product currently in stock.</li>
+           <li>Taxed : Shows if taxes are applied to this product (displays T if it is).</li>
+          </ul></li>
+        </ul></p>
+    </li>
+
+    <li><p><I>&lt;Table&gt;</I></p>
+        <p>This tag is not new to the HTML language, but new attributes allows you to
+        display the content of an entire inventory or group. Only use this tag alone with the
+        new attributes (do not include any TH, TR, TD, ou /TABLE), the web module
+        will automaticly add the lines and collumn for this table. You can still include standard
+        TABLE attributes to modify the table's appearance.</p>
+        <p>Attributes :
+        <ul>
+         <li>Value="..."
+          <ul>
+           <li>Groups : Shows a list of all the groups contained in the inventory.</li>
+           <li>Products : Shows a list of all the product in a group or in the entire inventory.</li>
+          </ul></li>
+         <li>Group="..." : The code of the group to display when Value="Products", if omited the entire
+         content of the inventory will be displayed.</li>
+        </ul></p>
+    </li>
+   </ul><br>
+
+   <p>You can take a look at the source code of the exemple-en.html file in your "Virtual Salesman\Web" folder
+   to see what a template looks like. That exemple can also be executed with the provided "exemple.v3i"
+   inventory. Simply follow the steps of the Executing section below to display that inventory with the
+   web module on an http server.</p>
+  </dd></dl><br>
+
+  <a name="WExe"></a>
+  <dl><dt><h4>2.3.5 Executing</h4></dt>
+  <dd>
+    <p>To use the web module you need to have access to an http server or host that will allow you to
+    run binary CGI programs, then you simply have to copy the "VS3.cgi" file in the CGI folder of
+    your server or host (normally called cgi-bin) along with your inventories and templates, it
+    is recommended to create a sub-directory for the templates and inventories. Then on your
+    web browser (Internet Explorer) type in the address of your server or host followed by the
+    name of the CGI folder, then add the file name of the web module (VS3.cgi) and then
+    the name of your template has a parameter (ex.: http://www.mywebhost.com/cgi-bin/VS3.cgi?templates/webexemple.html).
+    If the specified template cannot be found by the module an error message with displayed. Note
+    that inside the templates, the path to the inventory file is relative to the module's root
+    folder, not the template's. If an inventory cannot be found an error message will be also displayed.</p>
+
+    <p>The web module can receive parameters with both the Get and Post method, Post is recommended
+    because the name of the template file does not show up in the address. Depending on your 
+    server or host the root folder for the web module may vary, you should then contact your network
+    administrator to know from wich folder will the web module look for external files.
+    On some servers it looks at the server root, so "VV3.cgi?webexemple.html" will look for
+    webexemple.html in the root folder of the server, even if the module itself is located inside
+    a cgi-bin folder (on Apache server it looks inside the cgi-bin folder).</p>
+  </dd></dl>
+  <p><a href="help.html">Return to top of page</a></p><br>
+
+  <a name="Data"></a>
+  <dl><dt><h2>3.0 Data structures</h2></dt>
+  <dd>
+    <p>The Virtual Salesman stores all of your company information in a single folder, inside it are all
+    the files containing informations on your company, inventories and transactions. When creating a new
+    company you will have to specify the name of that folder.It is very easy to make backup copies
+    of your company data, simply copy this folder on a floppy disk or compress it with programs
+    like WinZip.</p>
+  </dd></dl><br>
+
+  <a name="Encr"></a>
+  <dl><dt><h3>3.1 Encryption</h3></dt>
+  <dd>
+   <p>All the Virtual Salesman files used to store your company information are encrypted on 32bit 
+   with multiple keys. This prevents the files from being accessed or modified by any other software
+   and makes your company's data completely secured.</p>
+  </dd></dl><br>
+
+  <a name="Conc"></a>
+  <dl><dt><h2>4.0 Conclusion</h2></dt>
+  <dd>
+   <p>For any question, comment or extra information, don't hesitate to contact me by email at
+   <a href="mailto:marc@marcandre.info">marc@marcandre.info</a>.</p>
+
+   <p>Thanks for using the Virtual Salesman 3.</p>
+  </dd></dl>
+  <p><a href="help.html">Return to top of page</a></p><br> 
+ </body>
+</html>
